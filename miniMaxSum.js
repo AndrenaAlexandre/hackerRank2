@@ -24,7 +24,7 @@
 
 function miniMaxSum(arr) {
 
-    let minSum = 999999;
+    let minSum = Math.pow(10, 15);
     let maxSum = 0;
     let values = [];
 

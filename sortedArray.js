@@ -19,4 +19,23 @@ var sortedSquares = function(nums) {
     
 };
 
-// I've solved it but I want to return at a later time to see how I can make it faster 
+// I've solved it but I want to return at a later time to see how I can make it either faster or with less memory 
+
+var sortedSquares = function(nums) {
+    var emptyArr = new Array(nums.length);
+    
+    for(i=0; i < nums.length; i++){
+        var squared = nums[i] * nums[i];
+        emptyArr[i]= squared;
+    };
+    emptyArr.sort((a,b)=>a-b);
+    return emptyArr;
+    
+};
+
+// so I've made a slight adjustment and decided to use Array() to create a new array set to the legth of the array being passed in to cut down on memory being seeked
+//each time the for loop iterates
+
+// the results of the tweak resulted in 124MS runtime, faster than 52.96% of submissions. Decreased speed by about 4%
+// but the memory of 45.1MB, less than 98.36% of submissions! so this leaves the question of which is of greater inportance? Speed or memory? 
+// I guess it all depends on what you are trying to accomplish to determine which should be sacrificed for what
